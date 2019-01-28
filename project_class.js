@@ -21,4 +21,14 @@ function Project() {
     this.resize = function() {
         this.resize = true;
     }
+    
+    this.height = function() {
+        height = 0;
+        for (var i = 0; i < this.content.length; i++)
+        {
+            this.content[i].draw(cumulativeOffset)
+            height += this.content[i].height();
+        } 
+        return height;
+    }
 }
